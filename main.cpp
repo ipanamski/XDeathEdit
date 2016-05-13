@@ -13,18 +13,18 @@ cin.getline(filename, 50);
 ofstream editfile;
 editfile.open(filename);
 cout << "Okay, now make a text: " << endl;
-while (1)
-{
-cout << line << "> ";
-getline(cin, text);
-line++;
-if (text == "stop")
-{
-editfile.close();
-cout << "Bye!" << endl;
-return false;
-}
-else
-editfile << text << endl;
-}
+  while (1)
+  {
+  cout << line << "> ";
+  getline(cin, text);
+  line++;
+    if (text == "^x" || text == "^q" || text == "^c" || text == "^d" || text == "^X"  || text == "^Q" || text == "^C" || text == "^D")
+    {
+    editfile.close();
+    cout << "Bye!" << endl;
+    return false;
+    }
+    else
+    editfile << text << endl;
+  }
 }
